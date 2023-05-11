@@ -1,0 +1,27 @@
+{% extends "once_estrellas/base.html" %}
+
+{% block contenido %}
+
+<p>
+  <strong>Nombre:</strong> {{object.nombre}}
+</p>
+<p>
+  <strong>Apellido:</strong> {{object.apellido}}
+</p>
+<p>
+  <strong>CI:</strong> {{object.cedula_de_identidad}}
+</p>
+<p>
+  <strong>Telefono:</strong> {{object.telefono}}
+</p>
+<p>
+  <strong>Ingreso:</strong> {{object.fecha_ingreso}}
+</p>
+<p>
+  <strong>Numero:</strong> {{object.numero_socio_socia}}
+  </p>
+
+<br>
+<a href="{% url 'lista_socios_socias' %}">Volver lista</a>
+
+{% endblock contenido %}

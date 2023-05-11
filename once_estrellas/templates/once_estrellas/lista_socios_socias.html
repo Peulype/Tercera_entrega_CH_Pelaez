@@ -1,0 +1,46 @@
+{% extends "once_estrellas/base.html" %}
+
+{% block contenido %}
+<section>
+  <div>
+    <h1>Lista Socios_socias</h1>
+    <a href="{% url 'crear_socio_socia' %}">Crear socio_socia</a>
+    <br>
+
+    <table class="table">
+      <tbody>
+        <tr>
+          <th>ID</th>
+          <th>Nombre</th>
+          <th>Apellido</th>
+          <td>Numero</td>
+          <td>Ingreso</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        {% for N°_socio in object_list %} 
+        <tr>
+          <td>{{ N°_socio.id }}</td>
+          <td>{{ N°_socio.nombre }}</td>
+          <td>{{ N°_socio.numero }}</td>
+          <td>
+            <a href="{% url 'ver_socio_socia' N°_socio.id %}">Ver</a>
+          </td>
+          <td>
+            <a href="{% url 'editar_socio_socia' N°_socio.id %}">Editar</a>
+          </td>
+          <td>
+            <a href="{% url 'eliminar_socio_socia' N°_socio.id %}">
+              <i class="bi bi-trash"></i>
+            </a>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+  </div>
+</section>
+{% endblock contenido %}
